@@ -19,3 +19,20 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
+
+function changeColor(color) {
+    switch (color) {
+        case "blue":
+            document.getElementById("myClock").style.color = "blue";
+            break;
+
+        case "green":
+            document.getElementById("myClock").style.color = "green";
+            break;
+    
+        default:
+            document.getElementById("myClock").style.color = "orange";
+            break;
+    }
+}

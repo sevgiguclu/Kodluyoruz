@@ -35,3 +35,9 @@ body {
      margin-top: 120px;
      width: 17%;
 }
+
+.btn {
+  padding: 10px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
