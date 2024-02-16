@@ -20,7 +20,7 @@ function Form({addLastItem,formContacts}) {
 
 
   return (
-    <form onSubmit={addItem}>
+    <form onSubmit={addItem} className='form'>
         <div>
             <input name='name' value={form.name} placeholder='name' onChange={changeInput}></input>
         </div>
@@ -28,7 +28,7 @@ function Form({addLastItem,formContacts}) {
             <input name='phone' value={form.phone} placeholder='phone' onChange={changeInput}></input>
         </div>
         <div>
-            <button>Add</button>
+            <button className='btn'>Add</button>
         </div>
     </form>
   )

@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react'
 import List from './Lists'
 import Form from './Form'
+import './style.css'
 
 function Contacts() {
     const [contacts,setContacts] = useState([
@@ -15,7 +16,7 @@ function Contacts() {
     },[contacts]);
 
     return (
-        <div>
+        <div id='container'>
             <List contactsArray={contacts}/>
             <Form addLastItem={setContacts} formContacts={contacts}/>
 

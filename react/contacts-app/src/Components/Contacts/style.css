@@ -1,0 +1,46 @@
+#container {
+    width: 400px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 5px;
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list{
+    margin: 15px 0;
+}
+
+.list > li{
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.list > li:hover{
+    background-color: bisque;
+}
+
+.btn{
+    float: right;
+    padding: 5px 10px;
+}
+
+.form input {
+    margin-bottom: 5px;
+}
+
+
