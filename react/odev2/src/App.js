@@ -36,8 +36,8 @@ function App() {
   return (
     <>
       <section className="todoapp">
-        <Header addItem={setList}></Header>
-        <Section todo={list}></Section>
+        <Header addNewItem={setList} listArray={list}></Header>
+        <Section todo={list} changeList={setList}></Section>
         <Footer></Footer>
       </section>
       <InfoFooter></InfoFooter>

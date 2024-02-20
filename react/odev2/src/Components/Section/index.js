@@ -1,7 +1,14 @@
 import React from 'react'
 
-function Section({todo}) {
-  console.log({todo});
+function Section({todo,changeList}) {
+  // console.log({todo});
+  const deleteItem = (e) => {
+    console.log("todo:",todo);
+    const deleteItemText = e.target.previousSibling.innerText;
+    const updatedToDo = todo.filter(item => item.text !== deleteItemText);
+    changeList(updatedToDo);
+    console.log("todo:",updatedToDo);
+  }
   return (
     <section className='main'>
       <input className="toggle-all" type="checkbox" />
@@ -16,14 +23,14 @@ function Section({todo}) {
               <div className="view">
                 <input className="toggle" type="checkbox" />
                 <label>{item.text}</label>
-                <button className="destroy"></button>
+                <button className="destroy" onClick={deleteItem}></button>
               </div>
           </li> :
           <li key={i}>
               <div className="view">
                 <input className="toggle" type="checkbox" />
                 <label>{item.text}</label>
-                <button className="destroy"></button>
+                <button className="destroy" onClick={deleteItem}></button>
               </div>
           </li>
         ))}
@@ -32,6 +39,7 @@ function Section({todo}) {
       
 
     </section >
+    
   )
 }
 
