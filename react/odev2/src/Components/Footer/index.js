@@ -1,21 +1,36 @@
 import React from 'react'
 
-function Footer() {
+function Footer({todo, forFilterArray,changeForFilterArray}) {
+
+  const filterSelected = (e) => {
+    e.preventDefault();
+    const filterName = e.target.name;
+    if(filterName === 'active'){
+      forFilterArray = todo.filter(item => !item.done);
+    }
+    else if(filterName === 'completed'){
+      forFilterArray = todo.filter(item => item.done);
+    }
+    else {
+      forFilterArray = todo;
+    }
+    changeForFilterArray(forFilterArray);
+  }
+  
   return (
     <footer className='footer'>
       <span className="todo-count">
-        <strong>2</strong>
-        items left
+        <strong>4</strong> items left
       </span>
       <ul className="filters">
         <li>
-          <a href="#/" className="selected">All</a>
+          <a href="#/" name="all" className="selected" onClick={filterSelected}>All</a>
         </li>
         <li>
-          <a href="#/">Active</a>
+          <a href="#/" name="active" onClick={filterSelected}>Active</a>
         </li>
         <li>
-          <a href="#/">Completed</a>
+          <a href="#/" name="completed" onClick={filterSelected}>Completed</a>
         </li>
       </ul>
 

@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function Header({listArray,addNewItem}) {
+function Header({listArray,addNewItem,forFilterList}) {
   // console.log("vfd",listArray);
   const [newItem,setNewItem] = useState("");
   const [newObject,setObject] =useState({"done": false,"text": ""});
@@ -11,6 +11,7 @@ function Header({listArray,addNewItem}) {
   const addItem = (e) => {
     e.preventDefault();
     addNewItem([...listArray,newObject]);
+    forFilterList([...listArray,newObject]);
     setNewItem("");
     console.log("array",listArray);
   }

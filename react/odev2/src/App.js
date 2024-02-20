@@ -32,13 +32,17 @@ function App() {
       "done": false
     }
   ]);
+  const [ForFilterList,setForFilterList] = useState(list);
+  // const [count,setCount] = useState(4);
+  
+
   // console.log("app list : \n",{list});
   return (
     <>
       <section className="todoapp">
-        <Header addNewItem={setList} listArray={list}></Header>
-        <Section todo={list} changeList={setList}></Section>
-        <Footer></Footer>
+        <Header addNewItem={setList} listArray={list} forFilterList={setForFilterList}></Header>
+        <Section view={ForFilterList} changeList={setForFilterList}></Section>
+        <Footer todo={list} forFilterArray={ForFilterList} changeForFilterArray={setForFilterList}></Footer>
       </section>
       <InfoFooter></InfoFooter>
     </>

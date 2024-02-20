@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Section({todo,changeList}) {
+function Section({view,changeList}) {
   // console.log({todo});
   const deleteItem = (e) => {
-    console.log("todo:",todo);
+    console.log("todo:",view);
     const deleteItemText = e.target.previousSibling.innerText;
-    const updatedToDo = todo.filter(item => item.text !== deleteItemText);
+    const updatedToDo = view.filter(item => item.text !== deleteItemText);
     changeList(updatedToDo);
     console.log("todo:",updatedToDo);
   }
@@ -17,7 +17,7 @@ function Section({todo,changeList}) {
       </label>
 
       <ul className="todo-list">
-        {todo.map((item, i) => (
+        {view.map((item, i) => (
           item.done ? 
           <li className="completed" key={i}>
               <div className="view">
