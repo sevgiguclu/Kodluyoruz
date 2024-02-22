@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Section({view,changeList}) {
+function Section({view,changeList,changeListArray}) {
   // console.log({todo});
   const deleteItem = (e) => {
     console.log("todo:",view);
@@ -8,6 +8,7 @@ function Section({view,changeList}) {
     const updatedToDo = view.filter(item => item.text !== deleteItemText);
     changeList(updatedToDo);
     console.log("todo:",updatedToDo);
+    changeListArray(updatedToDo);
   }
   return (
     <section className='main'>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer({todo, forFilterArray,changeForFilterArray}) {
+function Footer({todo, forFilterArray,changeForFilterArray,count}) {
 
   const filterSelected = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ function Footer({todo, forFilterArray,changeForFilterArray}) {
   return (
     <footer className='footer'>
       <span className="todo-count">
-        <strong>4</strong> items left
+        <strong>{count}</strong> items left
       </span>
       <ul className="filters">
         <li>
