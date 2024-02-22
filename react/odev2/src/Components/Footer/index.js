@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer({todo, forFilterArray,changeForFilterArray,count}) {
+function Footer({todo, changeToDo, forFilterArray,changeForFilterArray,count}) {
 
   const filterSelected = (e) => {
     e.preventDefault();
@@ -15,6 +15,15 @@ function Footer({todo, forFilterArray,changeForFilterArray,count}) {
       forFilterArray = todo;
     }
     changeForFilterArray(forFilterArray);
+  }
+
+  const doneList = todo.filter(item => item.done);
+
+  const deleteDoneList = (e) => {
+    const deleteList = todo.filter(item => !item.done);
+    console.log(deleteList);
+    changeToDo(deleteList);
+    changeForFilterArray(deleteList);
   }
   
   return (
@@ -34,8 +43,8 @@ function Footer({todo, forFilterArray,changeForFilterArray,count}) {
         </li>
       </ul>
 
-      <button className="clear-completed">
-        Clear completed
+      <button className="clear-completed" onClick={deleteDoneList}>
+        {doneList.length > 0 ? 'Clear completed' : ''}
       </button>
     </footer>
   )

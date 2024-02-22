@@ -47,7 +47,7 @@ function App() {
       <section className="todoapp">
         <Header addNewItem={setList} listArray={list} forFilterList={setForFilterList}></Header>
         <Section view={ForFilterList} changeList={setForFilterList} changeListArray={setList}></Section>
-        <Footer todo={list} forFilterArray={ForFilterList} changeForFilterArray={setForFilterList} count={count}></Footer>
+        <Footer todo={list} changeToDo={setList} forFilterArray={ForFilterList} changeForFilterArray={setForFilterList} count={count}></Footer>
       </section>
       <InfoFooter></InfoFooter>
     </>

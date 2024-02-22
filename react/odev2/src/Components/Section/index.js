@@ -1,15 +1,28 @@
 import React from 'react'
 
 function Section({view,changeList,changeListArray}) {
-  // console.log({todo});
+
   const deleteItem = (e) => {
-    console.log("todo:",view);
     const deleteItemText = e.target.previousSibling.innerText;
     const updatedToDo = view.filter(item => item.text !== deleteItemText);
+
     changeList(updatedToDo);
-    console.log("todo:",updatedToDo);
     changeListArray(updatedToDo);
   }
+  
+
+  const checkFunction = (e) => {
+    console.log(e);
+    const itemText = e.target.nextElementSibling.innerText;
+    const itemForUpdate = view.map( item => 
+      item.text === itemText ? {...item, done: !item.done } : item
+    );
+    
+    changeList(itemForUpdate);
+    changeListArray(itemForUpdate);
+
+  }
+
   return (
     <section className='main'>
       <input className="toggle-all" type="checkbox" />
@@ -22,14 +35,14 @@ function Section({view,changeList,changeListArray}) {
           item.done ? 
           <li className="completed" key={i}>
               <div className="view">
-                <input className="toggle" type="checkbox" />
+                <input className="toggle" type="checkbox" onChange={checkFunction} checked={item.done} />
                 <label>{item.text}</label>
                 <button className="destroy" onClick={deleteItem}></button>
               </div>
           </li> :
           <li key={i}>
               <div className="view">
-                <input className="toggle" type="checkbox" />
+                <input className="toggle" type="checkbox" onChange={checkFunction} checked={item.done}/>
                 <label>{item.text}</label>
                 <button className="destroy" onClick={deleteItem}></button>
               </div>
