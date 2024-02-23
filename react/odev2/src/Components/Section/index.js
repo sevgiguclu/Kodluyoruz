@@ -11,7 +11,7 @@ function Section({view,changeList,changeListArray}) {
   }
   
   const checkFunction = (e) => {
-    console.log(e);
+    // console.log(e);
     const itemText = e.target.nextElementSibling.innerText;
     const itemForUpdate = view.map( item => 
       item.text === itemText ? {...item, done: !item.done } : item
@@ -23,20 +23,16 @@ function Section({view,changeList,changeListArray}) {
   }
 
   const toggleAll = (e) => {
-    console.log("Toogle : \n");
-    console.log(e.target.previousElementSibling.checked);
     const checkStatus = e.target.previousElementSibling.checked;
     if(checkStatus){
       e.target.previousElementSibling.checked = false;
       const toggleList = view.map(item => item.done === false ? item : {...item,done:false});
-      console.log(toggleList);
       changeList(toggleList);
       changeListArray(toggleList);
     }
     else{
       e.target.previousElementSibling.checked = true;
       const toggleList = view.map(item => item.done === true ? item : {...item,done:true});
-      console.log(toggleList);
       changeList(toggleList);
       changeListArray(toggleList);
     }

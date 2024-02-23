@@ -13,7 +13,7 @@ function Header({listArray,addNewItem,forFilterList}) {
     addNewItem([...listArray,newObject]);
     forFilterList([...listArray,newObject]);
     setNewItem("");
-    console.log("array",listArray);
+    // console.log("array",listArray);
   }
   return (
     <header className='header'>
