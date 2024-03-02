@@ -32,3 +32,8 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.inlineList {
+  display: inline-grid;
+  padding: 0 20px;
+}
