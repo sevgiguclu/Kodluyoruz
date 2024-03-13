@@ -14,6 +14,7 @@ function Header() {
             <li><Link to="/contact">İletişim</Link></li>
             <li onClick={() => navigate(-1)}>Geri</li>
         </ul>
+        <hr />
     </header>
   )
 }

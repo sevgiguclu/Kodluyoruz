@@ -6,6 +6,7 @@ import Users from './pages/Users'
 import Contact from './pages/Contact'
 import Header from './Components/Header'
 import AboutUs from './pages/AboutUs'
+import UsersDetail from './pages/UsersDetail'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route index element={<Home/>} />{/* index == path='/' */}
           <Route path='users' element={<Users/>} />
+          <Route path='users/:id' element={<UsersDetail/>} />
           <Route path='contact' element={<Contact/>} />
           <Route path='aboutus' element={<AboutUs/>} />
         </Routes>
