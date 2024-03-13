@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Users from './pages/Users'
 import Contact from './pages/Contact'
 import Header from './Components/Header'
+import AboutUs from './pages/AboutUs'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home/>} />{/* index == path='/' */}
           <Route path='users' element={<Users/>} />
           <Route path='contact' element={<Contact/>} />
+          <Route path='aboutus' element={<AboutUs/>} />
         </Routes>
       </BrowserRouter>
     </>
