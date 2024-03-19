@@ -19,3 +19,8 @@ ul,li {
   font-weight: 600;
   margin: 1rem 0;
 }
+
+.register_input_container {
+  display: flex;
+  column-gap: 50px;
+}
