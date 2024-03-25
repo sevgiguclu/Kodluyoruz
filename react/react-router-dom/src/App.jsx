@@ -10,6 +10,7 @@ import DashboardLayouts from './layouts/dashboard/index'
 import Login from './pages/auth/Login'
 import LoginLayout from './layouts/auth/index'
 import Register from './pages/auth/Register'
+import Error404 from "./pages/Error404";
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
             <Route index element={<Login/>} />
             <Route path='register' element={<Register/>} />
           </Route>
+
+          <Route path="*" element={<Error404/>}></Route>
 
         </Routes>
       </BrowserRouter>
